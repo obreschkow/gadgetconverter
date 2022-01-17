@@ -1,0 +1,27 @@
+OVERVIEW
+====================================================================================================================
+
+gadgetconverter converts Gadget hdf5 files to Gadget-2 binary, e.g. for use with surfsuite. The general use is:
+> ./gadgetconverter -in [HDF5 filename] -out [binary filename]
+
+IMPORTANT: This elementary version of the code only exports postions, velocities and particle IDs. All other
+properties, even particle masses, are lost in the binary file. Extending the code to include additional
+properties is trivial, if needed.
+
+V0.1  14/01/2022: First release
+V0.2  17/01/2022: Added ability to deal with more than 2e9 particles per file
+
+Copyright Danail Obreschkow (danail.obreschkow@icrar.org)
+
+
+QUICK START ON ICRAR-HYADES
+====================================================================================================================
+
+# install and compile gadgetconverter in your home directory
+cd ~
+rm -rf gadgetconverter/ # remove previous surfsuite directory
+git clone https://github.com/obreschkow/gadgetconverter # install updated version
+cd gadgetconverter # change to gadgetconverter directory
+module load gfortran hdf5 # load required modules
+make system=hyades # compile code
+./gadgetconverter version # check version
